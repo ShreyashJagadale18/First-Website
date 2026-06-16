@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMW Official</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+        }
+
+        /* Top Bar */
+        .top-bar {
+            background: #0066B1;
+            padding: 8px 20px;
+        }
+
+        .top-bar a {
+            color: white !important;
+            text-decoration: none;
+        }
+
+        /* Navbar */
+        .navbar {
+            background: #111 !important;
+        }
+
+        .navbar-brand,
+        .nav-link {
+            color: white !important;
+        }
+
+        .nav-link:hover {
+            color: #0066B1 !important;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 90vh;
+            background: url('https://images.unsplash.com/photo-1555215695-3004980ad54e?w=1600') center/cover no-repeat;
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.55);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: bold;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            background: #111;
+            color: white;
+            min-height: 100%;
+            padding: 25px;
+        }
+
+        .sidebar h4 {
+            color: #0066B1;
+            margin-top: 20px;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .sidebar ul li {
+            margin: 10px 0;
+        }
+
+        .sidebar ul li a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .sidebar ul li a:hover {
+            color: #0066B1;
+        }
+
+        /* Cards */
+        .card {
+            transition: 0.3s;
+            border: none;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .card img {
+            height: 220px;
+            object-fit: cover;
+        }
+
+        /* Contact */
+        .contact-section {
+            background: white;
+            padding: 60px 0;
+        }
+
+        .btn-bmw {
+            background: #0066B1;
+            color: white;
+        }
+
+        .btn-bmw:hover {
+            background: #004d87;
+            color: white;
+        }
+
+        /* Footer */
+        footer {
+            background: #111;
+            color: white;
+            padding: 50px 0 20px;
+        }
+
+        footer a {
+            color: #ccc;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: #0066B1;
+        }
+
+        .social-icons i {
+            font-size: 22px;
+            margin-right: 15px;
+        }
+    </style>
+    <!--  Style of About Us  -->
+    <style>
+        body {
+            background: #f5f5f5;
+        }
+
+        .about-bmw {
+            background: #111;
+            color: white;
+            overflow: hidden;
+        }
+
+        .about-bmw img {
+            border-radius: 15px;
+            transition: 0.4s;
+        }
+
+        .about-bmw img:hover {
+            transform: scale(1.05);
+        }
+
+        .section-title {
+            color: #0066B1;
+            font-weight: bold;
+        }
+
+        .feature-list li {
+            margin-bottom: 12px;
+        }
+
+        .feature-list i {
+            color: #0066B1;
+        }
+
+        .btn-bmw {
+            background: #0066B1;
+            border: none;
+            padding: 12px 25px;
+            transition: 0.3s;
+        }
+
+        .btn-bmw:hover {
+            background: #004a82;
+            transform: translateY(-3px);
+        }
+
+        .stats-box {
+            background: #1b1b1b;
+            padding: 25px;
+            border-radius: 15px;
+            transition: 0.3s;
+            height: 100%;
+        }
+
+        .stats-box:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 25px rgba(0, 102, 177, .3);
+        }
+
+        .stats-box i {
+            color: #0066B1;
+        }
+
+        .stats-box h2 {
+            color: white;
+        }
+
+        .stats-box p {
+            color: #bdbdbd;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Top Bar -->
+    <div class="top-bar fixed-top ">
+        <div class="container">
+            <div class="d-flex justify-content-end gap-4">
+                <a href="#about">About BMW</a>
+                <a href="#contact">Contact</a>
+                <a href="#locate">Dealer Locator</a>
+            </div>
+        </div>
+    </div>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg mt-4">
+        <div class="container">
+            <a class="navbar-brand fw-bold fs-3" href="#">
+                BMW
+            </a>
+
+            <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="menu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#">Sedans</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">SUVs</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Electric</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">M Series</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Accessories</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>THE ULTIMATE DRIVING MACHINE</h1>
+            <p>Luxury • Innovation • Performance</p>
+            <a href="#cars" class="btn btn-primary btn-lg mt-3">
+                Explore Models
+            </a>
+        </div>
+    </section>
+
+    <!-- Main Section -->
+    <div class="container-fluid my-5">
+        <div class="row">
+
+            <!-- Sidebar -->
+            <div class="col-lg-3 mb-4">
+                <div class="sidebar rounded">
+
+                    <h4>BMW Series</h4>
+                    <ul>
+                        <li><a href="#">1 Series</a></li>
+                        <li><a href="#">3 Series</a></li>
+                        <li><a href="#">5 Series</a></li>
+                        <li><a href="#">7 Series</a></li>
+                    </ul>
+
+                    <h4>Vehicle Type</h4>
+                    <ul>
+                        <li><a href="#">Sedan</a></li>
+                        <li><a href="#">SUV</a></li>
+                        <li><a href="#">Coupe</a></li>
+                        <li><a href="#">Electric</a></li>
+                    </ul>
+
+                    <h4>Price Range</h4>
+                    <input type="range" class="form-range">
+
+                    <h4>Fuel Type</h4>
+                    <ul>
+                        <li><a href="#">Petrol</a></li>
+                        <li><a href="#">Diesel</a></li>
+                        <li><a href="#">Hybrid</a></li>
+                        <li><a href="#">Electric</a></li>
+                    </ul>
+
+                </div>
+            </div>
+
+            <!-- Cars -->
+            <div class="col-lg-9 col-md-8" id="cars">
+
+                <div class="row g-4">
+
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card h-100">
+                            <img src="assets/images/car 6.webp"
+                                class="card-img-top">
+                            <div class="card-body">
+                                <h5>BMW M4</h5>
+                                <p>High-performance sports coupe with dynamic driving experience.</p>
+                                <button class="btn btn-primary">Explore</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card h-100">
+                            <img src="assets/images/car 1.webp"
+                                class="card-img-top">
+                            <div class="card-body">
+                                <h5>BMW X5</h5>
+                                <p>Premium SUV combining luxury, comfort and power.</p>
+                                <button class="btn btn-primary">Explore</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card h-100">
+                            <img src="assets/images/car 3.1.jpg"
+                                class="card-img-top">
+                            <div class="card-body">
+                                <h5>BMW i7</h5>
+                                <p>Luxury electric sedan with cutting-edge technology.</p>
+                                <button class="btn btn-primary">Explore</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card h-100">
+                            <img src="assets/images/BMW M3.webp"
+                                class="card-img-top">
+                            <div class="card-body">
+                                <h5>BMW M3</h5>
+                                <p>Ultimate high-performance sports sedan delivering track-ready thrills.</p>
+                                <button class="btn btn-primary">Explore</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card h-100">
+                            <img src="assets/images/BMW i3.avif"
+                                class="card-img-top">
+                            <div class="card-body">
+                                <h5>BMW i3</h5>
+                                <p>fully electric compact luxury sedan "Neue Klasse" electric platform.</p>
+                                <button class="btn btn-primary">Explore</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card h-100">
+                            <img src="assets/images/car 2.jpg"
+                                class="card-img-top">
+                            <div class="card-body">
+                                <h5>BMW M8</h5>
+                                <p>Ultimate grand touring coupe delivering thrilling performance.</p>
+                                <button class="btn btn-primary">Explore</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <!-- About -->
+    <section id="about" class="about-bmw py-5">
+        <div class="container">
+
+            <div class="row align-items-center">
+
+                <!-- Content -->
+                <div class="col-lg-6 mb-4">
+
+                    <h2 class="display-5 fw-bold mb-4">
+                        About BMW
+                    </h2>
+
+                    <p class="text-light mb-4">
+                        For over a century, BMW has stood for innovation,
+                        luxury, and driving pleasure. We create premium
+                        vehicles that combine advanced technology,
+                        sustainable mobility, and exceptional performance.
+                    </p>
+
+                    <div class="row">
+
+                        <div class="col-md-6">
+                            <h5 class="section-title">Our Mission</h5>
+
+                            <ul class="list-unstyled feature-list">
+                                <li>
+                                    <i class="bi bi-check-circle-fill me-2"></i>
+                                    Innovative Engineering
+                                </li>
+
+                                <li>
+                                    <i class="bi bi-check-circle-fill me-2"></i>
+                                    Sustainable Mobility
+                                </li>
+
+                                <li>
+                                    <i class="bi bi-check-circle-fill me-2"></i>
+                                    Premium Customer Experience
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="col-md-6">
+                            <h5 class="section-title">Our Vision</h5>
+
+                            <ul class="list-unstyled feature-list">
+                                <li>
+                                    <i class="bi bi-bullseye me-2"></i>
+                                    Future Mobility
+                                </li>
+
+                                <li>
+                                    <i class="bi bi-bullseye me-2"></i>
+                                    Global Leadership
+                                </li>
+
+                                <li>
+                                    <i class="bi bi-bullseye me-2"></i>
+                                    Electric Innovation
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+
+                    <a href="#" class="btn btn-bmw text-white mt-3">
+                        Discover BMW
+                    </a>
+
+                </div>
+
+                <!-- Image -->
+                <div class="col-lg-6">
+                    <img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?w=1200" alt="BMW Car"
+                        class="img-fluid shadow">
+                </div>
+
+            </div>
+
+            <!-- Statistics -->
+            <div class="row text-center mt-5 g-4">
+
+                <div class="col-md-3 col-6">
+                    <div class="stats-box">
+                        <i class="bi bi-car-front-fill fs-1"></i>
+                        <h2 class="fw-bold mt-3">30M+</h2>
+                        <p>Vehicles Delivered</p>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-6">
+                    <div class="stats-box">
+                        <i class="bi bi-globe-americas fs-1"></i>
+                        <h2 class="fw-bold mt-3">140+</h2>
+                        <p>Countries</p>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-6">
+                    <div class="stats-box">
+                        <i class="bi bi-lightning-charge-fill fs-1"></i>
+                        <h2 class="fw-bold mt-3">100+</h2>
+                        <p>Years of Innovation</p>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-6">
+                    <div class="stats-box">
+                        <i class="bi bi-award-fill fs-1"></i>
+                        <h2 class="fw-bold mt-3">500+</h2>
+                        <p>Global Awards</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact-section" id="contact">
+        <div class="container">
+
+            <div class="text-center mb-5">
+                <h2>BMW Customer Support</h2>
+                <p>We are here to help you find your perfect BMW.</p>
+            </div>
+
+            <form>
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <input type="text" class="form-control" placeholder="First Name">
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        <input type="text" class="form-control" placeholder="Last Name">
+                    </div>
+
+                    <div class="col-md-12 mb-3">
+                        <input type="email" class="form-control" placeholder="Email Address">
+                    </div>
+
+                    <div class="col-md-12 mb-3">
+                        <textarea class="form-control" rows="5" placeholder="Your Message"></textarea>
+                    </div>
+
+                    <div class="col-md-12 text-center">
+                        <button class="btn btn-bmw px-5">
+                            Submit
+                        </button>
+                    </div>
+                </div>
+            </form>
+
+        </div>
+    </section>
+
+    <!-- Dealer Locator -->
+    <div id="locate" class="div">
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3769.806274463457!2d72.84067430000002!3d19.1161528!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c9d01d993f01%3A0x2df16c617de99c8e!2sBMW%20Showroom%2C%20Andheri%20(W)%2C%20Mumbai%20%7C%20Navnit%20Motors!5e0!3m2!1sen!2sin!4v1781585805899!5m2!1sen!2sin"
+            width="1800" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+
+            <div class="row">
+
+                <div class="col-md-4 mb-4">
+                    <h2>BMW</h2>
+                    <p>
+                        BMW is a global leader in luxury mobility,
+                        blending innovation, performance and premium design.
+                    </p>
+
+                    <div class="social-icons">
+                        <i class="fab fa-facebook"></i>
+                        <i class="fab fa-instagram"></i>
+                        <i class="fab fa-x-twitter"></i>
+                        <i class="fab fa-youtube"></i>
+                    </div>
+                </div>
+
+                <div class="col-md-2">
+                    <h5>Models</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#">3 Series</a></li>
+                        <li><a href="#">5 Series</a></li>
+                        <li><a href="#">X5</a></li>
+                        <li><a href="#">i7</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-3">
+                    <h5>Services</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Book Test Drive</a></li>
+                        <li><a href="#">Finance</a></li>
+                        <li><a href="#">BMW Service</a></li>
+                        <li><a href="#">Dealers</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-3">
+                    <h5>Support</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">FAQs</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <hr>
+
+            <div class="text-center">
+                © 2026 BMW Showcase. All Rights Reserved.
+            </div>
+
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
